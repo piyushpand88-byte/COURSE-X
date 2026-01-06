@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>COURSE X — Premium Learning Access</title>
+
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+}
+
+/* ===== BASE ===== */
+html{ scroll-behavior:smooth; }
+
+body{
+  background:#000;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ===== COLORS ===== */
+:root{
+  --blue:#2b7cff;
+  --gray:#bfbfbf;
+  --border:#1a1a1a;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #111;
+  z-index:999;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.brand img{
+  height:34px;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  font-size:.95rem;
+  letter-spacing:1px;
+}
+
+.nav-links a{
+  opacity:.75;
+  transition:.3s;
+}
+
+.nav-links a:hover{ opacity:1 }
+
+/* ===== HERO ===== */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:140px 20px 80px;
+  background:
+    radial-gradient(circle at top, rgba(43,124,255,.15), transparent 45%),
+    #000;
+}
+
+.hero{
+  max-width:900px;
+  animation:fadeUp 1.4s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(60px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero h1{
+  font-size:4.2rem;
+  font-weight:900;
+  letter-spacing:5px;
+}
+
+.hero h1 span{
+  color:var(--blue);
+}
+
+.hero p{
+  margin-top:26px;
+  font-size:1.25rem;
+  color:var(--gray);
+}
+
+/* BLUE LINE (REQUESTED) */
+.hero .blue-line{
+  margin-top:18px;
+  font-size:1.25rem;
+  color:var(--blue);
+  font-weight:600;
+}
+
+.hero-note{
+  margin-top:40px;
+  display:inline-block;
+  border:1px solid var(--border);
+  padding:12px 30px;
+  border-radius:999px;
+  font-size:.9rem;
+  color:#aaa;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:110px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:2.6rem;
+  letter-spacing:2px;
+}
+
+.section-title p{
+  margin-top:16px;
+  color:#999;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:34px;
+}
+
+.card{
+  border:1px solid var(--border);
+  padding:38px;
+  background:#050505;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#333;
+}
+
+/* ===== CTA ===== */
+.cta{
+  border:1px solid var(--border);
+  padding:100px 30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:2.9rem;
+  letter-spacing:2px;
+}
+
+.cta p{
+  margin-top:22px;
+  color:#aaa;
+  font-size:1.1rem;
+}
+
+.cta a{
+  display:inline-block;
+  margin:32px 16px 0;
+  padding:18px 52px;
+  border-radius:999px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.cta a:hover{
+  transform:translateY(-4px);
+}
+
+.primary{
+  background:#fff;
+  color:#000;
+}
+
+.secondary{
+  border:1px solid #333;
+  color:#fff;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid #111;
+  padding:45px 20px;
+  text-align:center;
+  color:#777;
+  font-size:.9rem;
+}
+
+/* ===== FLOAT ===== */
+.telegram-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  background:var(--blue);
+  color:#fff;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero h1{ font-size:3rem }
+  .section-title h2{ font-size:2.2rem }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="./cx.png" alt="COURSE X Logo">
+      <span>COURSE&nbsp;<span style="color:#2b7cff">X</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#categories">CATEGORIES</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero">
+    <h1>COURSE <span>X</span></h1>
+    <p>
+      Affordable access to premium courses<br>
+      from your favourite creators
+    </p>
+
+    <!-- BLUE LINE -->
+    <div class="blue-line">
+      Learn more. Pay less. Upgrade faster.
+    </div>
+
+    <div class="hero-note">
+      Private access • Limited daily availability
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <h2>WHAT IS COURSE X</h2>
+    <p>Private access to high-value learning</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">Premium courses from top creators.</div>
+    <div class="card">Very heavily discounted access.</div>
+    <div class="card">Direct Telegram support.</div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="section-title">
+    <h2>LEARNING CATEGORIES</h2>
+    <p>Only skills that matter</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">Stock Market & Trading</div>
+    <div class="card">Web Development</div>
+    <div class="card">Digital Marketing</div>
+    <div class="card">Programming & Technology</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="cta">
+    <h2>REQUEST A COURSE</h2>
+    <p>
+      Send the creator name and course you want.<br>
+      Replies usually within minutes.
+    </p>
+    <a href="https://t.me/Dw_409" class="primary">TELEGRAM @Dw_409</a>
+    <a href="https://wa.me/91XXXXXXXXXX" class="secondary">WHATSAPP</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 COURSE X · Not affiliated with any creator or brand
+</footer>
+
+<a href="https://t.me/Dw_409" class="telegram-float">Chat on Telegram</a>
+
+</body>
+</html>
